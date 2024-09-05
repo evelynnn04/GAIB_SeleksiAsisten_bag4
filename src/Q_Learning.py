@@ -3,7 +3,7 @@ import random
 
 # Class ini khusus buat soal seleksi GAIB 
 class Q_Learning:
-    def __init__(self, alpha=0.1, gamma=0.9, epsilon=0.1, episodes=1):
+    def __init__(self, alpha=0.1, gamma=0.9, epsilon=0.1, episodes=10):
         '''
         alpha: learning ratenya 
         gamma: discount factor, range-nya 0-1, semakin deket 1 berarti agent semakin mertimbangin reward di masa depan
@@ -65,9 +65,6 @@ class Q_Learning:
                 if total_reward >= 500 or total_reward <= -200:
                     break
 
-        print("Q-Table:")
-        print(self.q_table)
-
 if __name__ == '__main__':
     model_q = Q_Learning(episodes=10)
     model_q.learn()
@@ -84,6 +81,7 @@ if __name__ == '__main__':
         if total_reward >= 500 or total_reward <= -200:
             break
 
+    print("Q Learning")
     print("Path: ")
     print(path)
     print("Q Table: ")

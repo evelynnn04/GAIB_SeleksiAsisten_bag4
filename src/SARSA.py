@@ -54,7 +54,6 @@ class SARSA:
                 self.q_table[state, action] += self.alpha * (
                     reward + self.gamma * self.q_table[next_state, next_action] - self.q_table[state, action]
                 )
-                # print(f"q_table[{state}, {action}] += {self.alpha} * ({reward} + {self.gamma} * q_table[{next_state}, {next_action}] - q_table[{state}, {action}]) = {self.q_table[state, action]}")
 
                 state = next_state
                 action = next_action
@@ -79,6 +78,7 @@ if __name__ == '__main__':
         if total_reward >= 500 or total_reward <= -200:
             break
 
+    print("SARSA")
     print("Path: ")
     print(path)
     print("Q Table: ")
